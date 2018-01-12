@@ -4,7 +4,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Weather = require('../models/Weather.js');
 
-/* GET ALL BOOKS */
+/* GET ALL WEATHERS */
 router.get('/', function(req, res, next) {
   Weather.find(function (err, products) {
     if (err) return next(err);
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET SINGLE BOOK BY ID */
+/* GET SINGLE WEATHER BY ID */
 router.get('/:id', function(req, res, next) {
   Weather.findById(req.params.id, function (err, post) {
     if (err) return next(err);
@@ -20,7 +20,7 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
-/* SAVE BOOK */
+/* SAVE WEATHER */
 router.post('/', function(req, res, next) {
   Weather.create(req.body, function (err, post) {
     if (err) return next(err);
@@ -28,7 +28,7 @@ router.post('/', function(req, res, next) {
   });
 });
 
-/* UPDATE BOOK */
+/* UPDATE WEATHER */
 router.put('/:id', function(req, res, next) {
   Weather.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
@@ -36,7 +36,7 @@ router.put('/:id', function(req, res, next) {
   });
 });
 
-/* DELETE BOOK */
+/* DELETE WEATHER */
 router.delete('/:id', function(req, res, next) {
   Weather.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);

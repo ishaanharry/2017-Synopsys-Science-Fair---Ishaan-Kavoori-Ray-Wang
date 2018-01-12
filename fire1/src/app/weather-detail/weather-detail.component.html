@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>{{ weather.location }}</h1>
+  <dl class="list">
+    <dt>Temperature</dt>
+    <dd>{{ weather.temperature }}</dd>
+    <dt>Wind</dt>
+    <dd>{{ weather.wind }}</dd>
+    <dt>Humidity</dt>
+    <dd>{{ weather.humidity }}</dd>
+    <dt>Rainfall</dt>
+    <dd>{{ weather.rainfall }}</dd>
+    <dt>Update Date</dt>
+    <dd>{{ weather.updated_date }}</dd>
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <a [routerLink]="['/weather-edit', weather._id]" class="btn btn-success">EDIT</a>
+    <button class="btn btn-danger" type="button" (click)="deleteWeather(weather._id)">DELETE</button>
+  </div>
+</div>
